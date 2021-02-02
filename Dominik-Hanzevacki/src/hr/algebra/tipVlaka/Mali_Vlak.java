@@ -6,6 +6,7 @@
 package hr.algebra.tipVlaka;
 
 import hr.algebra.interfaces.Vlak;
+import hr.algebra.interfaces.Vozila;
 import hr.algebra.tipVozila.Automobil;
 import hr.algebra.tipVozila.Kombij;
 import java.util.List;
@@ -16,13 +17,13 @@ import java.util.List;
  */
 public class Mali_Vlak implements Vlak{
 
-    private List<Automobil> broj_Automobila;
-    private List<Kombij> broj_Kombija;
+    private List<Vozila> broj_Automobila;
+    private List<Vozila> broj_Kombija;
 
     private Automobil automobil = new Automobil();
     private Kombij kombij = new Kombij();
 
-    public Mali_Vlak(List<Automobil> broj_Automobila, List<Kombij> broj_Kombija) {
+    public Mali_Vlak(List<Vozila> broj_Automobila, List<Vozila> broj_Kombija) {
         this.broj_Automobila = broj_Automobila;
         this.broj_Kombija = broj_Kombija;
     }

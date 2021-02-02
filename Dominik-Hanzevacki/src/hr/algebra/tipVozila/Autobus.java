@@ -15,7 +15,8 @@ import java.util.Random;
 public class Autobus implements Vozila {
 
     private String tip_Autobusa;
-    private double kolicina_Goriva = generiraj_Kolicinu_Plina();
+    private double kolicina_Goriva;
+    private double napunjenost_Baterije;
 
     public Autobus() {
     }
@@ -29,11 +30,22 @@ public class Autobus implements Vozila {
         return 70;
     }
 
+    public double getKolicina_Goriva() {
+        return kolicina_Goriva;
+    }
+
     @Override
     public double generiraj_Kolicinu_Plina() {
         Random r = new Random();
-        int game = r.nextInt(100);
-        return game;
+        int kolicina_Plina = r.nextInt(100);
+        return kolicina_Plina;
+    }
+
+    @Override
+    public double generiraj_Napunjenost_Baterije() {
+        Random r = new Random();
+        int postotak_Baterije = r.nextInt(100);
+        return postotak_Baterije;
     }
 
 }

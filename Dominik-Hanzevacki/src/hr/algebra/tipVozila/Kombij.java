@@ -15,9 +15,14 @@ import java.util.Random;
 public class Kombij implements Vozila {
 
     private String tip_Kombij;
-    private double kolicina_Goriva = generiraj_Kolicinu_Plina();
+    private double kolicina_Goriva;
+    private double napunjenost_Baterije;
 
     public Kombij() {
+    }
+
+    public double getKolicina_Goriva() {
+        return kolicina_Goriva;
     }
 
     public Kombij(String tip_Kombij) {
@@ -31,9 +36,16 @@ public class Kombij implements Vozila {
 
     @Override
     public double generiraj_Kolicinu_Plina() {
-        Random r = new Random();
-        int game = r.nextInt(100);
-        return game;
+         Random r = new Random();
+        int kolicina_Plina = r.nextInt(100);
+        return kolicina_Plina;
     }
+     @Override
+    public double generiraj_Napunjenost_Baterije() {
+        Random r = new Random();
+        int postotak_Baterije = r.nextInt(100);
+        return postotak_Baterije;
+    }
+
 
 }

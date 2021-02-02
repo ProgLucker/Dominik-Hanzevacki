@@ -15,13 +15,18 @@ import java.util.Random;
 public class Kamion implements Vozila {
 
     private String tip_Kamiona;
-    private double kolicina_Goriva = generiraj_Kolicinu_Plina();
+    private double kolicina_Goriva;
+    private double napunjenost_Baterije;
 
     public Kamion() {
     }
 
     public Kamion(String tip_Kamiona) {
         this.tip_Kamiona = tip_Kamiona;
+    }
+
+    public double getKolicina_Goriva() {
+        return kolicina_Goriva;
     }
 
     @Override
@@ -31,9 +36,15 @@ public class Kamion implements Vozila {
 
     @Override
     public double generiraj_Kolicinu_Plina() {
+         Random r = new Random();
+        int kolicina_Plina = r.nextInt(100);
+        return kolicina_Plina;
+    }
+     @Override
+    public double generiraj_Napunjenost_Baterije() {
         Random r = new Random();
-        int game = r.nextInt(100);
-        return game;
+        int postotak_Baterije = r.nextInt(100);
+        return postotak_Baterije;
     }
 
 }
