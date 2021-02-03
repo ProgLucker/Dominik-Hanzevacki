@@ -20,4 +20,10 @@ public interface Zaposlenik_Prihod {
     void provjera_Plin(List<Vozila> vozilo);
 
     void provjera_Baterije(List<Vozila> vozilo);
+
+    double getPostotak_Place();
+
+    double getNapunjenost_Baterije();
+
+    double get_Postotak_Plina();
 }

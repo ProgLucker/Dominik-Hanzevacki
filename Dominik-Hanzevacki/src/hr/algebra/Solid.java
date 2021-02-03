@@ -57,11 +57,12 @@ public class Solid {
         list_Kamiona.add(kamion1);
         list_Kamiona.add(kamion2);
         
+        Zaposlenik zaposlenik1 = new Zaposlenik(10);
+        zaposlenik1.ispisi_Prihod_Malog_Vlaka(mali_Vlak);
+        
         Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus,list_Kamiona);
         veliki_Vlak.Ispisi_Prihod();
 
-        Zaposlenik zaposlenik1 = new Zaposlenik(10);
-        zaposlenik1.ispisi_Prihod_Malog_Vlaka(mali_Vlak);
         zaposlenik1.ispisi_Prihod_Velikog_Vlaka(veliki_Vlak);
         
         Zaposlenik zaposlenik2 = new Zaposlenik(11);
@@ -74,6 +75,9 @@ public class Solid {
         System.out.println("----- Singleton Design Pattern-----");
         Kreiraj_Zaposlenika_Singleton zaposlenik3 = Kreiraj_Zaposlenika_Singleton.getZaposlenik();
         Kreiraj_Zaposlenika_Singleton zaposlenik4 = Kreiraj_Zaposlenika_Singleton.getZaposlenik();
+        
+        
+
     }
 
 }

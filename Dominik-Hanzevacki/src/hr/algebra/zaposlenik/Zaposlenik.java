@@ -8,8 +8,6 @@ package hr.algebra.zaposlenik;
 import hr.algebra.interfaces.Vlak;
 import hr.algebra.interfaces.Vozila;
 import hr.algebra.interfaces.Zaposlenik_Prihod;
-import hr.algebra.tipVlaka.Mali_Vlak;
-import hr.algebra.tipVlaka.Veliki_Vlak;
 import java.util.List;
 
 /**
@@ -18,22 +16,22 @@ import java.util.List;
  */
 public class Zaposlenik implements Zaposlenik_Prihod {
 
-    private int postotak_Place;
+    private double postotak_Place;
     private double postotak_Plina;
     private double napunjenost_Baterije;
 
     public Zaposlenik(int postotak_Place) {
-        this.postotak_Place = postotak_Place;
+        this.postotak_Place = (double)postotak_Place/100;
     }
 
     @Override
     public void ispisi_Prihod_Malog_Vlaka(Vlak maliVlak) {
-       System.out.println("Zaposlenikov prihod od malog vlaka: " + maliVlak.getSuma() * postotak_Place / 100 + "kn");
+       System.out.println("Zaposlenikov prihod od malog vlaka: " + maliVlak.getSuma() * postotak_Place  + "kn");
     }
 
     @Override
     public void ispisi_Prihod_Velikog_Vlaka(Vlak velikiVlak) {
-       System.out.println("Zaposlenikov prihod od velikog vlaka: " + velikiVlak.getSuma()  * postotak_Place / 100 + "kn");
+       System.out.println("Zaposlenikov prihod od velikog vlaka: " + velikiVlak.getSuma()  * postotak_Place  + "kn");
     }
 
     @Override
@@ -49,6 +47,7 @@ public class Zaposlenik implements Zaposlenik_Prihod {
 
     }
 
+
     @Override
     public void provjera_Baterije(List<Vozila> vozilo) {
         for (Vozila v : vozilo) {
@@ -59,5 +58,20 @@ public class Zaposlenik implements Zaposlenik_Prihod {
                 System.out.println("Vozilo Sadrzi: " + napunjenost_Baterije + "% napunjenosti baterije");
             }
         };
+    }
+
+    @Override
+    public double getPostotak_Place() {
+        return postotak_Place;
+    }
+
+    @Override
+    public double getNapunjenost_Baterije() {
+        return napunjenost_Baterije;
+    }
+
+    @Override
+    public double get_Postotak_Plina() {
+       return postotak_Plina;
     }
 }

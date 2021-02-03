@@ -9,6 +9,7 @@ import hr.algebra.interfaces.Vlak;
 import hr.algebra.interfaces.Vozila;
 import hr.algebra.tipVozila.Automobil;
 import hr.algebra.tipVozila.Kombij;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,13 +18,13 @@ import java.util.List;
  */
 public class Mali_Vlak implements Vlak{
 
-    private List<Vozila> broj_Automobila;
-    private List<Vozila> broj_Kombija;
+    private List<Vozila> broj_Automobila = new ArrayList<>();
+    private List<Vozila> broj_Kombija = new ArrayList<>();
 
     private Automobil automobil = new Automobil();
     private Kombij kombij = new Kombij();
     
-    private int suma;
+    private int suma = 0;
 
     public Mali_Vlak(List<Vozila> broj_Automobila, List<Vozila> broj_Kombija) {
         this.broj_Automobila = broj_Automobila;
