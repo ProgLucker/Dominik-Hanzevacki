@@ -23,15 +23,19 @@ public class Veliki_Vlak implements Vlak {
     private Autobus autobus = new Autobus();
     private Kamion kamion = new Kamion();
 
+    private int suma;
+
     public Veliki_Vlak(List<Vozila> broj_Autobusa, List<Vozila> broj_Kamiona) {
         this.broj_Autobusa = broj_Autobusa;
         this.broj_Kamiona = broj_Kamiona;
+        this.suma = broj_Autobusa.size() * autobus.ispisiCijenu() + broj_Kamiona.size() * kamion.ispisiCijenu();
     }
 
-    public void ispisi_Cijenu_Malog_Vlaka(Veliki_Vlak veliki_Vlak) {
-        if (veliki_Vlak.broj_Autobusa.size() + veliki_Vlak.broj_Kamiona.size() <= 6) {
+    @Override
+    public void Ispisi_Prihod() {
+        if (broj_Autobusa.size() + broj_Kamiona.size() <= 6) {
             System.out.println(
-                    "Ukupan prihod karata velikog vlaka: " + Ispisi_Prihod() + "kn"
+                    "Ukupan prihod karata velikog vlaka: " + suma + "kn"
             );
         } else {
             System.out.println("Mali vlak može imati mjesta samo za 6 velikih vozila");
@@ -39,8 +43,9 @@ public class Veliki_Vlak implements Vlak {
     }
 
     @Override
-    public int Ispisi_Prihod() {
-        return broj_Autobusa.size() * autobus.ispisiCijenu() + broj_Kamiona.size() * kamion.ispisiCijenu();
+    public int getSuma() {
+        return suma;
     }
+
 
 }

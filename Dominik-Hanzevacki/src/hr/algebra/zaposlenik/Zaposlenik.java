@@ -5,6 +5,7 @@
  */
 package hr.algebra.zaposlenik;
 
+import hr.algebra.interfaces.Vlak;
 import hr.algebra.interfaces.Vozila;
 import hr.algebra.interfaces.Zaposlenik_Prihod;
 import hr.algebra.tipVlaka.Mali_Vlak;
@@ -26,13 +27,13 @@ public class Zaposlenik implements Zaposlenik_Prihod {
     }
 
     @Override
-    public void ispisi_Prihod_Malog_Vlaka(Mali_Vlak maliVlak) {
-        System.out.println("Zaposlenikov prihod od malog vlaka: " + maliVlak.Ispisi_Prihod() * postotak_Place / 100 + "kn");
+    public void ispisi_Prihod_Malog_Vlaka(Vlak maliVlak) {
+       System.out.println("Zaposlenikov prihod od malog vlaka: " + maliVlak.getSuma() * postotak_Place / 100 + "kn");
     }
 
     @Override
-    public void ispisi_Prihod_Velikog_Vlaka(Veliki_Vlak velikiVlak) {
-        System.out.println("Zaposlenikov prihod od velikog vlaka: " + velikiVlak.Ispisi_Prihod() * postotak_Place / 100 + "kn");
+    public void ispisi_Prihod_Velikog_Vlaka(Vlak velikiVlak) {
+       System.out.println("Zaposlenikov prihod od velikog vlaka: " + velikiVlak.getSuma()  * postotak_Place / 100 + "kn");
     }
 
     @Override

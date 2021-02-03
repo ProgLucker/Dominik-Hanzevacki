@@ -9,7 +9,8 @@ package hr.algebra.interfaces;
  *
  * @author Domi
  */
-public interface Vlak {
+public interface Vlak{
 
-    int Ispisi_Prihod();
+    void Ispisi_Prihod();
+    int getSuma();
 }

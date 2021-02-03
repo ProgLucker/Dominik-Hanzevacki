@@ -1,5 +1,7 @@
 package hr.algebra;
 
+import hr.algebra.Singleton_Design_Pattern.Kreiraj_Zaposlenika_Singleton;
+import hr.algebra.interfaces.Vlak;
 import hr.algebra.interfaces.Vozila;
 import hr.algebra.tipVlaka.Mali_Vlak;
 import hr.algebra.tipVlaka.Veliki_Vlak;
@@ -39,8 +41,8 @@ public class Solid {
         list_Kombija.add(kombij1);
         list_Kombija.add(kombij2);
         
-        Mali_Vlak mali_Vlak = new Mali_Vlak(list_Automobila,list_Kombija);
-        mali_Vlak.ispisi_Cijenu_Malog_Vlaka(mali_Vlak);
+        Vlak mali_Vlak = new Mali_Vlak(list_Automobila,list_Kombija);
+        mali_Vlak.Ispisi_Prihod();
 
         List<Vozila> list_Autobus = new ArrayList<>();
         Autobus autobus1 = new Autobus("Autobus1");
@@ -55,8 +57,8 @@ public class Solid {
         list_Kamiona.add(kamion1);
         list_Kamiona.add(kamion2);
         
-        Veliki_Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus,list_Kamiona);
-        veliki_Vlak.ispisi_Cijenu_Malog_Vlaka(veliki_Vlak);
+        Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus,list_Kamiona);
+        veliki_Vlak.Ispisi_Prihod();
 
         Zaposlenik zaposlenik1 = new Zaposlenik(10);
         zaposlenik1.ispisi_Prihod_Malog_Vlaka(mali_Vlak);
@@ -67,6 +69,11 @@ public class Solid {
         zaposlenik2.ispisi_Prihod_Velikog_Vlaka(veliki_Vlak);
         zaposlenik2.provjera_Plin(list_Autobus);
         zaposlenik2.provjera_Baterije(list_Autobus);
+        
+        //Singleton Design Pattern Primjer
+        System.out.println("----- Singleton Design Pattern-----");
+        Kreiraj_Zaposlenika_Singleton zaposlenik3 = Kreiraj_Zaposlenika_Singleton.getZaposlenik();
+        Kreiraj_Zaposlenika_Singleton zaposlenik4 = Kreiraj_Zaposlenika_Singleton.getZaposlenik();
     }
 
 }

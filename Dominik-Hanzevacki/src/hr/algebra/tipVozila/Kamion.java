@@ -36,7 +36,7 @@ public class Kamion implements Vozila {
 
     @Override
     public double generiraj_Kolicinu_Plina() {
-         Random r = new Random();
+        Random r = new Random();
         int kolicina_Plina = r.nextInt(100);
         return kolicina_Plina;
     }
