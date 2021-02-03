@@ -23,22 +23,22 @@ import static org.junit.Assert.*;
  * @author Domi
  */
 public class Veliki_VlakTest {
-    
+
     public Veliki_VlakTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -49,7 +49,7 @@ public class Veliki_VlakTest {
     @Test
     public void testIspisi_Prihod() {
         System.out.println("Ispisi_Prihod");
-       List<Vozila> list_Autobus = new ArrayList<>();
+        List<Vozila> list_Autobus = new ArrayList<>();
         Autobus autobus1 = new Autobus("Autobus1");
         Autobus autobus2 = new Autobus("Autobus2");
 
@@ -58,17 +58,17 @@ public class Veliki_VlakTest {
         List<Vozila> list_Kamiona = new ArrayList<>();
         Kamion kamion1 = new Kamion("Kamion1");
         Kamion kamion2 = new Kamion("Kamion2");
-        
+
         list_Kamiona.add(kamion1);
         list_Kamiona.add(kamion2);
-        
-        Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus,list_Kamiona);
-        
+
+        Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus, list_Kamiona);
+
         int expResult = 320;
         int result = veliki_Vlak.getSuma();
-        assertEquals(expResult, result);
-        
-         System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
+        assertFalse("Prihod mora biti jedna rezultatu testa!", false);
+        assertEquals(expResult, result, 0);
+        System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
     }
 
     /**
@@ -86,17 +86,17 @@ public class Veliki_VlakTest {
         List<Vozila> list_Kamiona = new ArrayList<>();
         Kamion kamion1 = new Kamion("Kamion1");
         Kamion kamion2 = new Kamion("Kamion2");
-        
+
         list_Kamiona.add(kamion1);
         list_Kamiona.add(kamion2);
-        
-        Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus,list_Kamiona);
-        
+
+        Vlak veliki_Vlak = new Veliki_Vlak(list_Autobus, list_Kamiona);
+
         int expResult = 320;
         int result = veliki_Vlak.getSuma();
-        assertEquals(expResult, result);
-        
-         System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
+        assertFalse("Prihod mora biti jedna rezultatu testa!", false);
+        assertEquals(expResult, result, 0);
+        System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
     }
-    
+
 }

@@ -63,13 +63,13 @@ public class Mali_VlakTest {
         list_Kombija.add(kombij2);
 
         Vlak mali_Vlak = new Mali_Vlak(list_Automobila, list_Kombija);
-        
+
         int expResult = 260;
         int result = mali_Vlak.getSuma();
-        
-        assertEquals(expResult, result);
-        
+        assertFalse("Prihod mora biti jedna rezultatu testa!", false);
+        assertEquals(expResult, result, 0);
         System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
+
     }
 
     /**
@@ -87,7 +87,6 @@ public class Mali_VlakTest {
         List<Vozila> list_Kombija = new ArrayList<>();
         Kombij kombij1 = new Kombij("Kombij1");
         Kombij kombij2 = new Kombij("Kombij2");
-        
 
         list_Kombija.add(kombij1);
         list_Kombija.add(kombij2);
@@ -95,9 +94,9 @@ public class Mali_VlakTest {
         Vlak mali_Vlak = new Mali_Vlak(list_Automobila, list_Kombija);
         int expResult = 260;
         int result = mali_Vlak.getSuma();
-        
-        assertEquals(expResult, result);
-        
+
+        assertFalse("Prihod mora biti jedna rezultatu testa!", false);
+        assertEquals(expResult, result, 0);
         System.out.println("Prihod mora biti: " + expResult + ", Rezultat testa je: " + result);
     }
 
